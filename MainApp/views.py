@@ -42,6 +42,21 @@ def item1 (request,item):
             if nec_.get("id") != 10:
                 return HttpResponse("<h1> Товар c id=10 не найден </h1>")
             if count_1 > len(items): break
+def all_items (request):
+    count_1 = 0
+    list1 = ["<ol>"]
+    for nec_ in items:  
+        count_1 += 1
+        list1.append("<li>")
+        list1.append(nec_.get("name"))
+        list1.append("</li>")
+
+
+        if count_1 > len(items): break
+    list1.append("</ol>")
+    return HttpResponse(list1)
+
+
         
 
 
