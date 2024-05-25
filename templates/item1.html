@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>
+        {% comment %} {{count=0}}
+        {{items_id=[]}} {% endcomment %}
+        {% for nec_ in res.all_items %}
+        {% comment %} {{count+=1}} {% endcomment %}
+        {% comment %} {{items_id.append(nec_."id")}} {% endcomment %}
+        {% if nec_.id == res.item %}
+        {{nec_.name}}       
+        {% endif %}
+        
+        
+        
+        {% endfor %}
+       
+        {% comment %} #     items_id=[]
+        #     for nec_ in items:
+        #         count_1 += 1
+        #         items_id.append(nec_.get("id"))
+        #         if nec_.get("id") == item:
+        #             #return HttpResponse(f'{nec_.get("name")} &nbsp {nec_.get("quantity")} штук <a href="http://127.0.0.1:8000/items">Назад к списку товаров</a>')
+        #             return render(request, "item1.html",nec_)
+        #         if count_1>item:
+        #             break
+        #     if not item in items_id:    
+        #         return HttpResponse('нет страницы')
+
+
+ {% endcomment %}
+
+    </h1>
+
+
+</body>
+
+</html>
